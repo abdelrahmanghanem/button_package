@@ -31,8 +31,11 @@ class _HomeScreenState extends State<HomeScreen> {
               MainButton(
                 maxWidth: maxWidth,
                 label: 'Submit',
-                backgroundColor: Colors.grey,
 
+                // backgroundColor: Colors.grey,
+                isLoading: true,
+                // isDisable: true,
+                // disableColor: Colors.red,
                 // labelStyle: TextStyle(fontSize: 10, color: Colors.red),
                 onPressed: () => log('CustomIconButton'),
               ),

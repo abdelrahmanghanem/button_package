@@ -83,6 +83,7 @@ class ElevatedButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final radiusValue = BorderRadius.all(Radius.circular(radius ?? 8));
     final typeValue = type ?? MainButtonEnum.primary;
+    final isDisableOrLoading = (isDisable ?? false) || (isLoading ?? false);
     return DecoratedBox(
       decoration: ShapeDecoration(
         color: Colors.transparent,
@@ -106,25 +107,32 @@ class ElevatedButtonWidget extends StatelessWidget {
           maxWidth: maxWidth ?? 370,
           height: height ?? 44,
           radius: radius ?? 8,
-          labelColor: getTextColor(typeValue, context, color: labelColor),
+          // labelColor: getTextColor(
+          //   typeValue,
+          //   context,
+          //   color: isDisableOrLoading ? Colors.grey.shade800 : labelColor,
+          // ),
           borderColor: getBorderColor(
             typeValue,
             context,
-            color: borderColor,
+            color: isDisableOrLoading
+                ? disableColor ?? Colors.grey.shade400
+                : borderColor,
           ),
           background: getBorderColor(
             typeValue,
             context,
-            color: backgroundColor,
+            color: isDisableOrLoading
+                ? disableColor ?? Colors.grey.shade400
+                : backgroundColor,
           ),
           context: context,
           smallSize: smallSize ?? false,
           opacity: opacity,
           contentPadding: contentPadding ?? const EdgeInsets.all(12),
-          disableColor: disableColor ?? Colors.grey.shade100,
+          disableColor: disableColor ?? Colors.grey.shade400,
         ).apply,
-        onPressed:
-            (isLoading ?? false) || (isDisable ?? false) ? null : onPressed,
+        onPressed: isDisableOrLoading ? null : onPressed,
         child: (isLoading ?? false)
             ? SizedBox(
                 width: (smallSize ?? false) ? 60 : width,

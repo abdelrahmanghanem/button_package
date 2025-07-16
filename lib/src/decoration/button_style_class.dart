@@ -8,7 +8,7 @@ class ButtonStyleClass extends ButtonStyle {
   final double height;
   final double radius;
   final double? opacity;
-  final Color labelColor;
+  // final Color labelColor;
   final Color borderColor;
   final Color disableColor;
   final Color background;
@@ -21,7 +21,7 @@ class ButtonStyleClass extends ButtonStyle {
     required this.maxWidth,
     required this.height,
     required this.radius,
-    required this.labelColor,
+    // required this.labelColor,
     required this.borderColor,
     required this.background,
     required this.context,
@@ -45,13 +45,13 @@ class ButtonStyleClass extends ButtonStyle {
         (Set<WidgetState> states) =>
             states.contains(WidgetState.disabled) ? disableColor : background,
       ),
-      foregroundColor: WidgetStateProperty.resolveWith<Color>(
-        (Set<WidgetState> states) =>
-            states.contains(WidgetState.disabled) ? Colors.grey : labelColor,
-      ),
+      // foregroundColor: WidgetStateProperty.resolveWith<Color>(
+      //   (Set<WidgetState> states) =>
+      //       states.contains(WidgetState.disabled) ? Colors.red : labelColor,
+      // ),
       side: WidgetStateProperty.resolveWith<BorderSide>(
         (Set<WidgetState> states) => states.contains(WidgetState.disabled)
-            ? BorderSide(color: borderColor, width: 0.5)
+            ? BorderSide(color: disableColor, width: 0.5)
             : BorderSide(color: borderColor, width: 0.5),
       ),
       shape: WidgetStateProperty.all<RoundedRectangleBorder>(
