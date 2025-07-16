@@ -1,3 +1,7 @@
+## 0.0.19
+
+* update dependencies and enhance button styles for better loading and disabled states
+
 ## 0.0.18
 
 * handle max width in main_button.

@@ -1,6 +1,6 @@
 name: main_button
 description: "is a versatile Flutter package for creating highly customizable buttons with options for loading indicators, disabled states, and flexible content."
-version: 0.0.18
+version: 0.0.19
 homepage: https://github.com/abdelrahmanghanem
 repository: https://github.com/abdelrahmanghanem/main_button
 
